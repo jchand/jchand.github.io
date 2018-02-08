@@ -9,11 +9,11 @@ DONE:
 
 -->
 
-
 <html>
     <head>
         <title>Jesse Chand | Portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <meta name="robots" content="noindex">
     </head>
     <body>
         <div id="left">
@@ -41,12 +41,16 @@ DONE:
                     <p>This was one of the most impactful projects that the company released in 2017. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
                     <p></br></p>
                     <h2>MOTIVATION</h2>
-                    <p>When Snapchat first launched, it only supported photos that disappeared after up to ten seconds. When we released videos, we kept the ten second limit because we wanted to maintain the notion that viewing a Snap was super quick. Since users open Snapchat several dozen times a day on average, we wanted to be sure that they could still easily jump in and out of the app.</p>
-                    <p>With that said, we found that half of all videos on Snapchat were ten seconds long, resulting in content that was being abruptly cut off. It was clear that users wanted to take longer videos. We also noted an emergent behavior among influencers who were beginning to use the camera in a different way: rather than taking quick selfies, they were broadcasting long-form Stories by taking sequences of back-to-back Snaps. With this use-case, the ten second limit was becoming a burden.</p>
+                    <p>We originally had a ten second video limit to be consistent with photos - we wanted the experience of opening a Snap to be super quick. However, we found that half of all videos on Snapchat were ten seconds long, and being abruptly cut off. We also noted an emergent behavior among influencers, who were beginning to use the camera for long-form Stories content instead of quick selfies.</p>
                     <p></br></p>
                     <h2>PROTOTYPING</h2>
-                    <p>Evan asked me to prototype several solutions to expanding the ten second video limit, including a single longer Snap and a timeline UI. We went with the Multi Snap approach - Snaps remain ten seconds long, and videos that are longer are split into multiple Snaps. This respects the notion that a Snap is a quick bite of content. We didn’t want to turn the experience of watching Snaps into watching YouTube videos. Furthermore, since the average Snap viewing duration is well under one second, a receiving user can tap multiple times to ‘scrub’ through a Multi Snap video sequence, as opposed to tapping once to skip the whole video.</p>
-                    <p>Lastly, we designed the UI of editing multiple Snaps at once to be flexible. The feature is extensible - it could plausibly support sources of content other than the immediate Snap camera. This might give the product the capacity to be a generalized Story editor. </p>
+                    <p>Evan asked me to prototype several approaches to expand the ten second recording limit. The first attempt was a simple extension of a Snap from ten seconds to sixty. However, we pivoted to the Multi Snap approach: Snaps remain ten seconds long, and longer videos are split into multiple Snaps. We chose this for three reasons:
+                    <ul>
+                            <li><p>It respects the notion that a Snap is a quick bite of content.</p></li>
+                            <li><p>Using the existing tap-to-skip behavior, users can scrub through a long video in 10s intervals instead of skipping the whole thing.</p></li>
+                            <li><p>A UI for editing multiple Snaps together is flexible: it could plausibly support sources other than the Snap camera, giving the product the capacity to be a generalized Story editor.</p></li>
+                    </ul>
+
                     <p></br></p>
                     <h2>RECORDING A MULTI SNAP</h2>
                     <p>I can press and hold the record button to begin recording a Snap. Once the video duration reaches ten seconds, I begin to seamlessly record a consecutive Snap.</p>
@@ -99,7 +103,11 @@ DONE:
             </div>
         </div>
         <div id="right">
-            <img id="phone" src="phone.png">
+                <video width="332" height="720" controls>
+                        <source src="movie.mp4" type="video/mp4">
+                      </video>
+
+            <!-- <img id="phone" src="phone.png"> -->
         </div>
         <script src="./script.js"></script>
     </body>

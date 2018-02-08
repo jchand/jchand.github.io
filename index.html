@@ -1,0 +1,100 @@
+<!-- make scroll view show up on edge
+make hte nav bar -->
+
+<html>
+    <head>
+        <title>Jesse Chand | Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="left">
+            <div id="nav">
+                <div id="navbar">
+                    <h2>ABOUT</h2>
+                    <h2>MULTI SNAP</h2>
+                    <h2>PULL-TO-REFRESH</h2>
+                    <h2>ATTACHMENTS</h2>
+                </div>
+            </div>
+            <div id="page">
+                <div id="text">
+                    <h1>About</h1>
+                    <p>I’m Jesse Chand, a product designer. Previously I was at Snapchat, under Evan Spiegel’s core product design team. Before that I wrote iOS animation and interactions on the Facebook Paper team.</p>
+                    <p>I’m passionate about making software more expressive. My background is in game design, and I hope to apply those principles in all of my design work.</p>
+                    <p>Feel free to send me an email or download my resume.</p>
+                    <p></br></p>
+                    <h2>PROJECTS</h2>
+                    <p>This interactive portfolio highlights three projects I worked on at Snapchat. Each was designed, prototyped and managed by myself from end-to-end.</p>
+                    <p>Tap on any blue description text to preview an an on-device example.</p>
+                    
+                    <p></br></p>
+                    <h1>Multi Snap</h1>
+                    <h2>SUMMARY</h2>
+                    <p>Multi Snap is a product that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit a video recording to 10 seconds - with Multi Snap, you can keep recording to capture the whole moment.</p>
+                    <p></br></p>
+                    <h2>IMPACT</h2>
+                    <p>Multi Snap was one of the most impactful projects that the company released in 2017. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
+                    <p></br></p>
+                    <h2>MOTIVATION</h2>
+                    <p>Originally we just had pics. Then we had videos to keep things quick (10s). But we found that more than half of all videos hit the 10s mark. users were getting cut off.</p>
+                    <p>Also, influencers like DJ Khaled were changing the way the product was used. They would blog long-form moments and the 10s limit was becoming a burden.</p>
+                    <p></br></p>
+                    <h2>PROTOTYPING</h2>
+                    <p>We tried a few methods here: long timeline and individual. We went with individual because it respects that a Snap feels snappy. Users can also quickly blaze through videos by tapping. Average Snap viewing duration is well under one second.</p>
+                    <p>The version of treating each as Snaps is also flexible. The feature is extensible - you could imagine Multi Snap having sources of content other than the camera in the moment. This might give the product the capacity to be a generalized story editor.</p>
+                    <p></br></p>
+                    <h2>RECORDING A MULTI SNAP</h2>
+                    <p>I can press and hold the record button to begin recording a Snap. Once the video duration reaches ten seconds, I begin to seamlessly record a consecutive Snap.</p>
+                    <p>The first time a user records a video that reaches 8s long, we pop a tooltip that prompts them to keep holding to create a Multi Snap.</p>
+                    <p>Each time a ten second interval has completed recording, a thumbnail slides on the screen from the left to indicate that a new Snap was created.</p>
+                    <p></br></p>
+                    <h2>EDITING A MULTI SNAP</h2>
+                    <p>Once I finish recording, I enter the Preview Screen where I can edit my Snaps.</p>
+                    <p>If I tap a thumbnail, the video seeks to that thumbnail.</p>
+                    <p>I can hide all the UI by swiping.</p>
+                    <p>I can press and hold a Snap to delete it in the trash can.</p>
+                    <p>If I draw on the screen, then it autohides.</p>
+                    <p>When I perform an edit - filter, text, etc - it automatically updates the thumbnails accordingly.</p>
+                    <p>When I press the Send button, the sequence is sent as a series of individual Snaps in chronological order.</p>
+                
+                    <p></br></p>
+                    <h1>Pull-to-Refresh</h1>
+                    <h2>SUMMARY</h2>
+                    <p>Pull to Refresh was an animation project. The ghost hides behind the card, and peeks out as you pull down. This is a reference to Picaboo. When you pull down enough, the ghost winks. When you release, we do a rainbow effect.</p>
+                    <p></br></p>
+                    <h2>ENGINEERING</h2>
+                    <p>I prototyped and developed the animation in OpenGL for performance. We split the screen in half. One shader is for the wave, the other is for the rainbow. The wave is calculated using trignometry and replicating the After Effects warp effect. When we let go, we use realistic spring physics from the POP library to make the wave peak amplitude based on the scroll offset. When we let go, we animate the gradient layer horizontally against a base layer with a blend mode to achieve the ripple effect.</p>
+                    <p></br></p>
+                    <h2>EASTER EGG</h2>
+                    <p>If you pull far enough, the ghost gets scared and the screen shakes. As you pull further down, the haptic rate increases. When you release, the speed of the launch and the haptic on release is intensified.</p>
+
+                    <p></br></p>
+                    <h1>Attachments</h1>
+                    <h2>SUMMARY</h2>
+                    <p>Attachments is a creative tool that allows users to search for a web URL and attach it to a Snap. After taking a Snap, I can select the Paperclip tool. I can then search for a URL or paste one from my clipboard. Once I attach the webpage, a friend can view it by swiping up on the Snap once they open it.</p>
+                    <p></br></p>
+                    <h2>IMPACT</h2>
+                    <p>Attachments allowed us to help brands monetize. We have features like the Snapchat Store, where users can swipe up to purchase things. This was crucial in that it allowed Snapchat ads to result in an in-app conversion.</p>
+                    <p>It was a form of expression. It allowed users to send YouTube videos, for videos longer than ten seconds.</p>
+                    <p>It also created an organic ecosystem where third party developers would create experiences on the Attachments platform. One example is Polly, Sarahah, and Story Replies. Part of my responsibilities post-launch was reaching out to these developers and understanding how we can support them.</p>
+                    <p></br></p>
+                    <h2>MOTIVATION</h2>
+                    <p>Wanted to use Attachments as a way to segue into Context.</p>
+                    <p>Context is a project that turns a Snap from a photo or a video, into a container. You can swipe up to learn more about the world.</p>
+                    <p>You could imagine how this system is flexible so that you can attach things other than web pages.</p>
+                    <p>We started with explicit user-input. Then we launched Context, which attempts to automatically gather additional info about the Snap and present it to you alongside.</p>
+                    <p></br></p>
+                    <h2>ADDING AN ATTACHMENT</h2>
+                    <p>Once I open the Paperclip tool, I can search for a URL, quickly reattach a link I previously attached, or automatically attach a URL from my clipboard.</p>
+                    <p></br></p>
+                    <h2>PRIVACY + SECURITY</h2>
+                    <p>Safesearch is on. We ask for permission before using the clipboard. Spoofing issue - HTTPS icon.</p>
+                </div>
+            </div>
+        </div>
+        <div id="right">
+            <img id="phone" src="phone.png">
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

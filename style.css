@@ -41,7 +41,7 @@
     max-width: 500px;
     width: 100%;
     height: 100%;
-    opacity: 0.5;
+    opacity: 0.4;
     /* background: #F5F9FB; */
 
     display: flex;
@@ -81,6 +81,10 @@
 #phone {
     width: 298px;
     height: 608px;
+}
+
+.nav_item {
+    cursor: pointer;
 }
 
 /* Fonts */ 

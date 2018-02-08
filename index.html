@@ -10,38 +10,33 @@ make hte nav bar -->
         <div id="left">
             <div id="nav">
                 <div id="navbar">
-                    <h2>ABOUT</h2>
-                    <h2>MULTI SNAP</h2>
-                    <h2>PULL-TO-REFRESH</h2>
-                    <h2>ATTACHMENTS</h2>
+                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab1'))">ABOUT</h2>
+                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab2'))">MULTI SNAP</h2>
+                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab3'))">PULL-TO-REFRESH</h2>
+                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab4'))">ATTACHMENTS</h2>
                 </div>
             </div>
             <div id="page">
                 <div id="text">
-                    <h1>About</h1>
-                    <p>I’m Jesse Chand, a product designer. Previously I was at Snapchat, under Evan Spiegel’s core product design team. Before that I wrote iOS animation and interactions on the Facebook Paper team.</p>
+                    <h1 id="tab1">About</h1>
+                    <p>I’m Jesse Chand, a product designer. Previously I was at <a href="https://www.snapchat.com/" target="_blank">Snapchat</a>, under Evan Spiegel’s core product design team. Before that I built iOS animations and interactions on the <a href="https://code.facebook.com/posts/656530327776932/building-paper/" target="_blank">Facebook Paper</a> team.</p>
                     <p>I’m passionate about making software more expressive. My background is in game design, and I hope to apply those principles in all of my design work.</p>
-                    <p>Feel free to send me an email or download my resume.</p>
-                    <p></br></p>
-                    <h2>PROJECTS</h2>
                     <p>This interactive portfolio highlights three projects I worked on at Snapchat. Each was designed, prototyped and managed by myself from end-to-end.</p>
-                    <p>Tap on any blue description text to preview an an on-device example.</p>
+                    <p>Feel free to <a href="mailto:jessechand@gmail.com" target="_top">send me an email</a> or <a href="jesse_chand_resume.pdf" target="_blank">download my resume.</a></p>
                     
                     <p></br></p>
-                    <h1>Multi Snap</h1>
+                    <h1 id="tab2">Multi Snap</h1>
                     <h2>SUMMARY</h2>
-                    <p>Multi Snap is a product that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit a video recording to 10 seconds - with Multi Snap, you can keep recording to capture the whole moment.</p>
-                    <p></br></p>
-                    <h2>IMPACT</h2>
-                    <p>Multi Snap was one of the most impactful projects that the company released in 2017. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
+                    <p>Multi Snap is a feature that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit video recording to one 10 second Snap. With Multi Snap, you can keep recording up to a minute to capture the whole moment.</p>
+                    <p>This was one of the most impactful projects that the company released in 2017. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
                     <p></br></p>
                     <h2>MOTIVATION</h2>
-                    <p>Originally we just had pics. Then we had videos to keep things quick (10s). But we found that more than half of all videos hit the 10s mark. users were getting cut off.</p>
-                    <p>Also, influencers like DJ Khaled were changing the way the product was used. They would blog long-form moments and the 10s limit was becoming a burden.</p>
+                    <p>When Snapchat first launched, it only supported photos that disappeared after up to ten seconds. When we released videos, we kept the ten second limit because we wanted to maintain the notion that viewing a Snap was super quick. Since users open Snapchat several dozen times a day on average, we wanted to be sure that they could still easily jump in and out of the app.</p>
+                    <p>With that said, we found that half of all videos on Snapchat were ten seconds long, resulting in content that was being abruptly cut off. It was clear that users wanted to take longer videos. We also noted an emergent behavior among influencers who were beginning to use the camera in a different way: rather than taking quick selfies, they were broadcasting long-form Stories by taking sequences of back-to-back Snaps. With this use-case, the ten second limit was becoming a burden.</p>
                     <p></br></p>
                     <h2>PROTOTYPING</h2>
-                    <p>We tried a few methods here: long timeline and individual. We went with individual because it respects that a Snap feels snappy. Users can also quickly blaze through videos by tapping. Average Snap viewing duration is well under one second.</p>
-                    <p>The version of treating each as Snaps is also flexible. The feature is extensible - you could imagine Multi Snap having sources of content other than the camera in the moment. This might give the product the capacity to be a generalized story editor.</p>
+                    <p>Evan asked me to prototype several solutions to expanding the ten second video limit, including a single longer Snap and a timeline UI. We went with the Multi Snap approach - Snaps remain ten seconds long, and videos that are longer are split into multiple Snaps. This respects the notion that a Snap is a quick bite of content. We didn’t want to turn the experience of watching Snaps into watching YouTube videos. Furthermore, since the average Snap viewing duration is well under one second, a receiving user can tap multiple times to ‘scrub’ through a Multi Snap video sequence, as opposed to tapping once to skip the whole video.</p>
+                    <p>Lastly, we designed the UI of editing multiple Snaps at once to be flexible. The feature is extensible - it could plausibly support sources of content other than the immediate Snap camera. This might give the product the capacity to be a generalized Story editor. </p>
                     <p></br></p>
                     <h2>RECORDING A MULTI SNAP</h2>
                     <p>I can press and hold the record button to begin recording a Snap. Once the video duration reaches ten seconds, I begin to seamlessly record a consecutive Snap.</p>
@@ -58,7 +53,7 @@ make hte nav bar -->
                     <p>When I press the Send button, the sequence is sent as a series of individual Snaps in chronological order.</p>
                 
                     <p></br></p>
-                    <h1>Pull-to-Refresh</h1>
+                    <h1 id="tab3">Pull-to-Refresh</h1>
                     <h2>SUMMARY</h2>
                     <p>Pull to Refresh was an animation project. The ghost hides behind the card, and peeks out as you pull down. This is a reference to Picaboo. When you pull down enough, the ghost winks. When you release, we do a rainbow effect.</p>
                     <p></br></p>
@@ -69,7 +64,7 @@ make hte nav bar -->
                     <p>If you pull far enough, the ghost gets scared and the screen shakes. As you pull further down, the haptic rate increases. When you release, the speed of the launch and the haptic on release is intensified.</p>
 
                     <p></br></p>
-                    <h1>Attachments</h1>
+                    <h1 id="tab4">Attachments</h1>
                     <h2>SUMMARY</h2>
                     <p>Attachments is a creative tool that allows users to search for a web URL and attach it to a Snap. After taking a Snap, I can select the Paperclip tool. I can then search for a URL or paste one from my clipboard. Once I attach the webpage, a friend can view it by swiping up on the Snap once they open it.</p>
                     <p></br></p>

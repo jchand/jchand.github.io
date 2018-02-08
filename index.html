@@ -1,5 +1,14 @@
-<!-- make scroll view show up on edge
-make hte nav bar -->
+<!-- 
+    
+TODO:
+- nav bar has selected state
+- make nav bar work on mobile
+
+DONE:
+- better padding to work on mobile
+
+-->
+
 
 <html>
     <head>
@@ -10,22 +19,23 @@ make hte nav bar -->
         <div id="left">
             <div id="nav">
                 <div id="navbar">
-                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab1'))">ABOUT</h2>
-                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab2'))">MULTI SNAP</h2>
-                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab3'))">PULL-TO-REFRESH</h2>
-                    <h2 class="nav_item" onclick="smoothScroll(document.getElementById('tab4'))">ATTACHMENTS</h2>
+                    <h2 class="nav_item" id="tab1" onclick="smoothScroll(document.getElementById('section1'))">ABOUT</h2>
+                    <h2 class="nav_item" id="tab2" onclick="smoothScroll(document.getElementById('section2'))">MULTI SNAP</h2>
+                    <h2 class="nav_item" id="tab3" onclick="smoothScroll(document.getElementById('section3'))">PULL-TO-REFRESH</h2>
+                    <h2 class="nav_item" id="tab4" onclick="smoothScroll(document.getElementById('section4'))">ATTACHMENTS</h2>
                 </div>
             </div>
             <div id="page">
+                <div id="margin_side"></div>
                 <div id="text">
-                    <h1 id="tab1">About</h1>
+                    <h1 id="section1">About</h1>
                     <p>I’m Jesse Chand, a product designer. Previously I was at <a href="https://www.snapchat.com/" target="_blank">Snapchat</a>, under Evan Spiegel’s core product design team. Before that I built iOS animations and interactions on the <a href="https://code.facebook.com/posts/656530327776932/building-paper/" target="_blank">Facebook Paper</a> team.</p>
                     <p>I’m passionate about making software more expressive. My background is in game design, and I hope to apply those principles in all of my design work.</p>
                     <p>This interactive portfolio highlights three projects I worked on at Snapchat. Each was designed, prototyped and managed by myself from end-to-end.</p>
                     <p>Feel free to <a href="mailto:jessechand@gmail.com" target="_top">send me an email</a> or <a href="jesse_chand_resume.pdf" target="_blank">download my resume.</a></p>
                     
                     <p></br></p>
-                    <h1 id="tab2">Multi Snap</h1>
+                    <h1 id="section2">Multi Snap</h1>
                     <h2>SUMMARY</h2>
                     <p>Multi Snap is a feature that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit video recording to one 10 second Snap. With Multi Snap, you can keep recording up to a minute to capture the whole moment.</p>
                     <p>This was one of the most impactful projects that the company released in 2017. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
@@ -53,7 +63,7 @@ make hte nav bar -->
                     <p>When I press the Send button, the sequence is sent as a series of individual Snaps in chronological order.</p>
                 
                     <p></br></p>
-                    <h1 id="tab3">Pull-to-Refresh</h1>
+                    <h1 id="section3">Pull-to-Refresh</h1>
                     <h2>SUMMARY</h2>
                     <p>Pull to Refresh was an animation project. The ghost hides behind the card, and peeks out as you pull down. This is a reference to Picaboo. When you pull down enough, the ghost winks. When you release, we do a rainbow effect.</p>
                     <p></br></p>
@@ -64,7 +74,7 @@ make hte nav bar -->
                     <p>If you pull far enough, the ghost gets scared and the screen shakes. As you pull further down, the haptic rate increases. When you release, the speed of the launch and the haptic on release is intensified.</p>
 
                     <p></br></p>
-                    <h1 id="tab4">Attachments</h1>
+                    <h1 id="section4">Attachments</h1>
                     <h2>SUMMARY</h2>
                     <p>Attachments is a creative tool that allows users to search for a web URL and attach it to a Snap. After taking a Snap, I can select the Paperclip tool. I can then search for a URL or paste one from my clipboard. Once I attach the webpage, a friend can view it by swiping up on the Snap once they open it.</p>
                     <p></br></p>
@@ -85,6 +95,7 @@ make hte nav bar -->
                     <h2>PRIVACY + SECURITY</h2>
                     <p>Safesearch is on. We ask for permission before using the clipboard. Spoofing issue - HTTPS icon.</p>
                 </div>
+                <div id="margin_side"></div>
             </div>
         </div>
         <div id="right">

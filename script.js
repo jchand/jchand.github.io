@@ -16,6 +16,7 @@ function toggle() {
 
 window.smoothScroll = function(target) {
     var scrollContainer = target;
+
     do { 
         scrollContainer = scrollContainer.parentNode;
         if (!scrollContainer) return;

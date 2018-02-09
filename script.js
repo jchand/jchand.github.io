@@ -6,10 +6,12 @@ window.onresize = function() {
 function toggle() {
     if (window.outerWidth < 900) {
         document.getElementById('right').style.display = 'none';
+        document.getElementById('nav').style.display = 'none';
         document.getElementById('left').style.width = '100%';
     }
     else {
         document.getElementById('right').style.display = 'flex';
+        document.getElementById('nav').style.display = 'flex';
         document.getElementById('left').style.width = '60%';
     }    
 }

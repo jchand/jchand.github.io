@@ -4,7 +4,7 @@ window.onresize = function() {
 }
 
 function toggle() {
-    if (window.innerWidth < 900) {
+    if (window.outerWidth < 900) {
         document.getElementById('right').style.display = 'none';
         document.getElementById('left').style.width = '100%';
     }

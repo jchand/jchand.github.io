@@ -1,11 +1,28 @@
 <!-- 
     
 TODO:
-- nav bar has selected state
+
+- videos start from the beginning 
+- be able to pause video
+- placeholder at beginning with no phone?
+
 - make nav bar work on mobile
+- scrolling on mobile sucks
+- do a pass on making videos smaller / efficient
+
+- fix ugly line and aspect ratio for Attachments video
 
 DONE:
 - better padding to work on mobile
+- first pass on copy
+- apple weird glyphs
+- add links everywhere
+- fix iphone positioning
+- nav bar has selected state
+- copy for pull to refresh engineering
+- remove audio from videos
+- record videos and make them work!
+
 
 -->
 
@@ -14,6 +31,8 @@ DONE:
         <title>Jesse Chand | Portfolio</title>
         <link rel="stylesheet" href="style.css">
         <meta name="robots" content="noindex">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <div id="left">
@@ -22,7 +41,7 @@ DONE:
                     <h2 class="nav_item" id="tab1" onclick="smoothScroll(document.getElementById('section1'))">ABOUT</h2>
                     <h2 class="nav_item" id="tab2" onclick="smoothScroll(document.getElementById('section2'))">MULTI SNAP</h2>
                     <h2 class="nav_item" id="tab3" onclick="smoothScroll(document.getElementById('section3'))">PULL-TO-REFRESH</h2>
-                    <h2 class="nav_item" id="tab4" onclick="smoothScroll(document.getElementById('section4'))">ATTACHMENTS</h2>
+                    <h2 class="nav_item" id="tab4" onclick="smoothScroll(document.getElementById('section4'))">PAPERCLIP</h2>
                 </div>
             </div>
             <div id="page">
@@ -34,14 +53,20 @@ DONE:
                     <p>This interactive portfolio highlights three projects I worked on at Snapchat. Each was designed, prototyped and managed by myself from end-to-end.</p>
                     <p>Feel free to <a href="mailto:jessechand@gmail.com" target="_top">send me an email</a> or <a href="jesse_chand_resume.pdf" target="_blank">download my resume.</a></p>
                     
+
                     <p></br></p>
                     <h1 id="section2">Multi Snap</h1>
                     <h2>SUMMARY</h2>
-                    <p>Multi Snap is a feature that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit video recording to one 10 second Snap. With Multi Snap, you can keep recording up to a minute to capture the whole moment.</p>
+                    <p><a href="https://techcrunch.com/2017/07/18/snapchat-adds-multi-snap-recording-and-a-color-changing-tint-brush/" target="_blank">Multi Snap</a> is a feature that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit video recording to one 10 second Snap. With Multi Snap, you can keep recording up to a minute to capture the whole moment.</p>
                     <p>This was one of the most impactful projects that the company released in 2017. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
                     <p></br></p>
-                    <h2>MOTIVATION</h2>
-                    <p>We originally had a ten second video limit to be consistent with photos - we wanted the experience of opening a Snap to be super quick. However, we found that half of all videos on Snapchat were ten seconds long, and being abruptly cut off. We also noted an emergent behavior among influencers, who were beginning to use the camera for long-form Stories content instead of quick selfies.</p>
+                    <h2>USER FLOW</h2>
+                    <ul>
+                            <li><p>I can <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 0)">press and hold the record button</a> to begin recording a Snap. Once the video duration reaches ten seconds, I begin to <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 1.6)">seamlessly record a consecutive Snap</a>. A thumbnail slides on the screen to indicate that a new Snap was created.</p></li>
+                            <li><p>Once I finish recording, I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 7.0)">enter the Preview Screen</a> where I can review my video and edit my Snaps.</p></li>
+                            <li><p>If I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 18.1)">tap a thumbnail</a>, the video seeks to that moment. I can also <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 21.8)">press-and-hold</a> a thumbnail to drag it into the trash.</p></li>
+                            <li><p>I can hide the Multi Snap UI by swiping it away. If it ever gets in the way while I'm drawing or editing, it <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 13.9)">auto-hides</a>.</p></li>
+                    </ul>  
                     <p></br></p>
                     <h2>PROTOTYPING</h2>
                     <p>Evan asked me to prototype several approaches to expand the ten second recording limit. The first attempt was a simple extension of a Snap from ten seconds to sixty. However, we pivoted to the Multi Snap approach: Snaps remain ten seconds long, and longer videos are split into multiple Snaps. We chose this for three reasons:
@@ -50,64 +75,52 @@ DONE:
                             <li><p>Using the existing tap-to-skip behavior, users can scrub through a long video in 10s intervals instead of skipping the whole thing.</p></li>
                             <li><p>A UI for editing multiple Snaps together is flexible: it could plausibly support sources other than the Snap camera, giving the product the capacity to be a generalized Story editor.</p></li>
                     </ul>
+    
 
-                    <p></br></p>
-                    <h2>RECORDING A MULTI SNAP</h2>
-                    <p>I can press and hold the record button to begin recording a Snap. Once the video duration reaches ten seconds, I begin to seamlessly record a consecutive Snap.</p>
-                    <p>The first time a user records a video that reaches 8s long, we pop a tooltip that prompts them to keep holding to create a Multi Snap.</p>
-                    <p>Each time a ten second interval has completed recording, a thumbnail slides on the screen from the left to indicate that a new Snap was created.</p>
-                    <p></br></p>
-                    <h2>EDITING A MULTI SNAP</h2>
-                    <p>Once I finish recording, I enter the Preview Screen where I can edit my Snaps.</p>
-                    <p>If I tap a thumbnail, the video seeks to that thumbnail.</p>
-                    <p>I can hide all the UI by swiping.</p>
-                    <p>I can press and hold a Snap to delete it in the trash can.</p>
-                    <p>If I draw on the screen, then it autohides.</p>
-                    <p>When I perform an edit - filter, text, etc - it automatically updates the thumbnails accordingly.</p>
-                    <p>When I press the Send button, the sequence is sent as a series of individual Snaps in chronological order.</p>
-                
                     <p></br></p>
                     <h1 id="section3">Pull-to-Refresh</h1>
                     <h2>SUMMARY</h2>
-                    <p>Pull to Refresh was an animation project. The ghost hides behind the card, and peeks out as you pull down. This is a reference to Picaboo. When you pull down enough, the ghost winks. When you release, we do a rainbow effect.</p>
+                    <p>I designed and engineered the Pull-to-Refresh animation for Chat and Stories. This was an exercise in interaction design and OpenGL development.</p>
+                    <ul>
+                            <li><p>The ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 2.2)">hides behind the card and peeks out</a> as I pull down (a reference to Picaboo, the original app name). It winks when I pull past the refresh threshold.</p></li>
+                            <li><p>When I release, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 5.9)">launches and pukes a rainbow.</a></p></li>
+                            <li><p>Easter egg: if you pull far enough, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 13.2)">becomes frightened and shakes</a>. The device also shakes if haptic feedback is supported.</p></li>
+                    </ul>
                     <p></br></p>
                     <h2>ENGINEERING</h2>
-                    <p>I prototyped and developed the animation in OpenGL for performance. We split the screen in half. One shader is for the wave, the other is for the rainbow. The wave is calculated using trignometry and replicating the After Effects warp effect. When we let go, we use realistic spring physics from the POP library to make the wave peak amplitude based on the scroll offset. When we let go, we animate the gradient layer horizontally against a base layer with a blend mode to achieve the ripple effect.</p>
+                    <p>I prototyped and developed the animation in OpenGL. Two shaders are used: one to render the wave tracking your finger, and another to render the rainbow ripple effect. The wave is a replication of the After Effects warp effect. I also use spring dynamics from the POP animation library to adjust the wave peak based on the scroll offset. The rainbow ripple effect is achieved by horizontally translating a gradient layer against another with a blend mode.</p>
                     <p></br></p>
-                    <h2>EASTER EGG</h2>
-                    <p>If you pull far enough, the ghost gets scared and the screen shakes. As you pull further down, the haptic rate increases. When you release, the speed of the launch and the haptic on release is intensified.</p>
+                    <h1 id="section4">Paperclip</h1>
+                    <h2>SUMMARY</h2>
+                    <p>The <a href="https://techcrunch.com/2017/07/05/snapchat-links-backdrops-voice-filters/" target="_blank">Paperclip</a> is a creative tool that lets users attach web pages to Snaps. It served as the foundation for the <a href="https://techcrunch.com/2017/10/10/snapchats-new-context-cards-use-snaps-for-spontaneous-discovery/" target="_blank">Context</a> project - turning a Snap from just a photo or video into an interactive container that describes the world.</p>
+                    <ul>
+                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.3)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 3.1)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
+                            <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 10.3)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
+                    </ul>
 
                     <p></br></p>
-                    <h1 id="section4">Attachments</h1>
-                    <h2>SUMMARY</h2>
-                    <p>Attachments is a creative tool that allows users to search for a web URL and attach it to a Snap. After taking a Snap, I can select the Paperclip tool. I can then search for a URL or paste one from my clipboard. Once I attach the webpage, a friend can view it by swiping up on the Snap once they open it.</p>
-                    <p></br></p>
                     <h2>IMPACT</h2>
-                    <p>Attachments allowed us to help brands monetize. We have features like the Snapchat Store, where users can swipe up to purchase things. This was crucial in that it allowed Snapchat ads to result in an in-app conversion.</p>
-                    <p>It was a form of expression. It allowed users to send YouTube videos, for videos longer than ten seconds.</p>
-                    <p>It also created an organic ecosystem where third party developers would create experiences on the Attachments platform. One example is Polly, Sarahah, and Story Replies. Part of my responsibilities post-launch was reaching out to these developers and understanding how we can support them.</p>
+                    <p>The Paperlip tool created an ecosystem where users were sharing millions of pages a day. It also opened the door for third party developers to create experiences on our platform, such as <a href="https://techcrunch.com/2017/09/20/polly-polls/" target="_blank">Polly</a> and <a href="https://www.thesun.co.uk/tech/4112509/sarahah-anonymous-messaging-app-snapchat-honesty-app/" target="_blank">Sarahah</a>. Part of my post-launch efforts was understanding how to better support these services.</p>
+                    <p>The tool was also crucial for our monetization efforts. It enabled advertisers to make conversions within their Snap ads by attaching e-commerce web pages. It was also used to rollout the <a href="https://techcrunch.com/2018/02/01/snapchat-snap-store/" target="_blank">Snap Store</a>.</p>
+
                     <p></br></p>
-                    <h2>MOTIVATION</h2>
-                    <p>Wanted to use Attachments as a way to segue into Context.</p>
-                    <p>Context is a project that turns a Snap from a photo or a video, into a container. You can swipe up to learn more about the world.</p>
-                    <p>You could imagine how this system is flexible so that you can attach things other than web pages.</p>
-                    <p>We started with explicit user-input. Then we launched Context, which attempts to automatically gather additional info about the Snap and present it to you alongside.</p>
                     <p></br></p>
-                    <h2>ADDING AN ATTACHMENT</h2>
-                    <p>Once I open the Paperclip tool, I can search for a URL, quickly reattach a link I previously attached, or automatically attach a URL from my clipboard.</p>
                     <p></br></p>
-                    <h2>PRIVACY + SECURITY</h2>
-                    <p>Safesearch is on. We ask for permission before using the clipboard. Spoofing issue - HTTPS icon.</p>
                 </div>
                 <div id="margin_side"></div>
             </div>
         </div>
         <div id="right">
-                <video width="332" height="720" controls>
-                        <source src="movie.mp4" type="video/mp4">
-                      </video>
-
-            <!-- <img id="phone" src="phone.png"> -->
+            <video id="video1" width="268" height="580" loop autoplay onloadstart="this.volume=0">
+                <source src="video_mul.mp4" type="video/mp4">
+            </video>
+            <video id="video2" width="268" height="580" loop autoplay onloadstart="this.volume=0">
+                <source src="video_ptr.mp4" type="video/mp4">
+            </video>
+            <video id="video3" width="268" height="580" loop autoplay onloadstart="this.volume=0">
+                <source src="video_att.mp4" type="video/mp4">
+            </video>
+            <img id="phone" src="phone.svg">
         </div>
         <script src="./script.js"></script>
     </body>

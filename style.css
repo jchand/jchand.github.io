@@ -83,9 +83,14 @@
     position: relative;
 }
 
+video {
+    position: absolute;
+}
 #phone {
-    width: 298px;
-    height: 608px;
+    width: 300px;
+    height: 600px;
+    position: absolute;
+
 }
 
 .nav_item {
@@ -94,7 +99,18 @@
 }
 
 .nav_item:hover {
-    color: #373C4380;
+    color: #373C43;
+}
+
+.scrub {
+    font-family: 'DIN Bold', Arial, sans-serif;
+    color: #3A99D8;
+    cursor: pointer;
+}
+
+.scrub:hover {
+    font-family: 'DIN Bold', Arial, sans-serif;
+    color: #3A99D8AA;
 }
 
 /* Fonts */ 

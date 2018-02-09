@@ -1,30 +1,21 @@
 <!-- 
     
 TODO:
-
-- videos start from the beginning 
 - be able to pause video
-- placeholder at beginning with no phone?
+- scroll to preview work
+- figure out when everything is loaded
 
+videos get loaded even when hidden
+side padding 40pt
+
+MOBILE:
 - make nav bar work on mobile
 - scrolling on mobile sucks
 - better mobile support for videos
 
+Won't Fix:
 - fix ugly line and aspect ratio for Attachments video
-
-DONE:
-- better padding to work on mobile
-- first pass on copy
-- apple weird glyphs
-- add links everywhere
-- fix iphone positioning
-- nav bar has selected state
-- copy for pull to refresh engineering
-- remove audio from videos
-- record videos and make them work!
-- do a pass on making videos smaller / efficient
-- make it more legible on mobile
-
+- fast scrolling flips out the simulator
 
 -->
 
@@ -35,6 +26,7 @@ DONE:
         <meta name="robots" content="noindex">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <div id="left">
@@ -96,8 +88,8 @@ DONE:
                     <h2>SUMMARY</h2>
                     <p>The <a href="https://techcrunch.com/2017/07/05/snapchat-links-backdrops-voice-filters/" target="_blank">Paperclip</a> is a creative tool that lets users attach web pages to Snaps. It served as the foundation for the <a href="https://techcrunch.com/2017/10/10/snapchats-new-context-cards-use-snaps-for-spontaneous-discovery/" target="_blank">Context</a> project - turning a Snap from just a photo or video into an interactive container that describes the world.</p>
                     <ul>
-                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.3)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 3.1)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
-                            <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 10.3)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
+                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.3)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 3.5)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
+                            <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 13.5)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
                     </ul>
 
                     <p></br></p>
@@ -122,7 +114,9 @@ DONE:
             <video id="video3" width="268" height="580" loop autoplay onloadstart="this.volume=0">
                 <source src="video_att.mp4" type="video/mp4">
             </video>
-            <img id="phone" src="phone.svg">
+            <div id="flash" class="device"></div>
+            <img id="phone" class="device" src="phone.svg">
+            <img id="phone_off" class="device" src="phone_off.svg">
         </div>
         <script src="./script.js"></script>
     </body>

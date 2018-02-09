@@ -46,10 +46,20 @@ function setTabColor() {
             tab2.css("color", "#373C4366");
             tab1.css("color", "#373C4366");
 
-            video3.show();
-            video2.hide();
-            video1.hide();
-            document.getElementById('phone').style.display = 'block';
+            var v3 = document.getElementById('video3');
+            v3.currentTime = 0;
+            
+            setTimeout(function() {
+                video3.show();
+                video2.hide();
+                video1.hide();
+                document.getElementById('phone').style.display = 'block';
+                document.getElementById('phone_off').style.display = 'none';
+
+                $("#flash").css("opacity", "1");
+                $("#flash").css("background", "black");
+                $("#flash").fadeTo( "slow" , 0, function() {});
+            }, 200);
         }
     } else if (section3.position().top < 150) {
         if (currentTab != 3) {
@@ -59,10 +69,20 @@ function setTabColor() {
             tab2.css("color", "#373C4366");
             tab1.css("color", "#373C4366");
 
-            video3.hide();
-            video2.show();
-            video1.hide();
-            document.getElementById('phone').style.display = 'block';
+            var v2 = document.getElementById('video2');
+            v2.currentTime = 0;
+
+            setTimeout(function() {
+                video3.hide();
+                video2.show();
+                video1.hide();
+                document.getElementById('phone').style.display = 'block';
+                document.getElementById('phone_off').style.display = 'none';
+
+                $("#flash").css("opacity", "1");
+                $("#flash").css("background", "black");
+                $("#flash").fadeTo( "slow" , 0, function() {});
+            }, 200);
         }
     } else if (section2.position().top < 150) {
         if (currentTab != 2) {
@@ -72,10 +92,20 @@ function setTabColor() {
             tab3.css("color", "#373C4366");
             tab1.css("color", "#373C4366");
 
-            video3.hide();
-            video2.hide();
-            video1.show();
-            document.getElementById('phone').style.display = 'block';
+            var v1 = document.getElementById('video1');
+            v1.currentTime = 0;
+
+            setTimeout(function() {
+                video3.hide();
+                video2.hide();
+                video1.show();
+                document.getElementById('phone').style.display = 'block';
+                document.getElementById('phone_off').style.display = 'none';
+
+                $("#flash").css("opacity", "1");
+                $("#flash").css("background", "black");
+                $("#flash").fadeTo( "slow" , 0, function() {});
+            }, 200);
         }
     } else if (section1.position().top < 150) {
         if (currentTab != 1) {
@@ -85,10 +115,17 @@ function setTabColor() {
             tab3.css("color", "#373C4366");
             tab2.css("color", "#373C4366");
 
-            video3.hide();
-            video2.hide();
-            video1.hide();
-            document.getElementById('phone').style.display = 'none';
+            setTimeout(function() {
+                video3.hide();
+                video2.hide();
+                video1.hide();
+                document.getElementById('phone').style.display = 'none';
+                document.getElementById('phone_off').style.display = 'block';
+
+                $("#flash").css("opacity", "1");
+                $("#flash").css("background", "black");
+                $("#flash").fadeTo( "slow" , 0, function() {});
+            }, 200);
         }
     }
 }
@@ -118,12 +155,16 @@ window.smoothScroll = function(target) {
 }
 
 function seekToTime(video, ts) {
-    video.pause();
+    video3.hide();
+    video2.hide();
+    video1.hide();
+
+    document.getElementById('phone_off').style.display = 'none';
+    document.getElementById('phone').style.display = 'block';
+    video.style.display = 'block';
+
     video.currentTime = ts; 
-    var timer = setInterval(function() {
-        if (video.paused && video.readyState == 4 || !video.paused) {
-            video.play();
-            clearInterval(timer);
-        }
-    }, 50);
+    $("#flash").css("opacity", "0.5");
+    $("#flash").css("background", "white");
+    $("#flash").fadeTo( "medium" , 0, function() {});
 }

@@ -36,11 +36,35 @@ function toggle() {
         document.getElementById('right').style.display = 'none';
         document.getElementById('nav').style.display = 'none';
         document.getElementById('left').style.width = '100%';
+
+        var all = document.getElementsByClassName('scrub');
+        for (var i = 0; i < all.length; i++) {
+            all[i].classList.add('off');
+        }
+
+        var all2 = document.getElementsByClassName('mobile_prev');
+        for (var i = 0; i < all2.length; i++) {
+            if (all2[i].classList.length > 1) {
+                all2[i].classList.remove('off');
+            }
+        }
     }
     else {
         document.getElementById('right').style.display = 'flex';
         document.getElementById('nav').style.display = 'flex';
         document.getElementById('left').style.width = '60%';
+
+        var all = document.getElementsByClassName('scrub');
+        for (var i = 0; i < all.length; i++) {
+            if (all[i].classList.length > 1) {
+                all[i].classList.remove('off');
+            }
+        }
+
+        var all2 = document.getElementsByClassName('mobile_prev');
+        for (var i = 0; i < all2.length; i++) {
+            all2[i].classList.add('off');
+        }
     }    
 }
 

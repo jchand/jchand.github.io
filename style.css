@@ -123,8 +123,27 @@ video {
     cursor: pointer;
 }
 
+.scrub.off {
+    font-family: 'DIN Regular', Arial, sans-serif;
+    color: #373C43;
+    cursor: default;
+}
+
 .scrub:hover {
+    color: #3A99D8AA;
+}
+
+.mobile_prev {
     font-family: 'DIN Bold', Arial, sans-serif;
+    color: #3A99D8;
+    cursor: pointer;
+}
+
+.mobile_prev.off {
+    display: none;
+}
+
+.mobile_prev:hover {
     color: #3A99D8AA;
 }
 

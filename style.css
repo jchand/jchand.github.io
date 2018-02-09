@@ -92,11 +92,20 @@ video {
     width: 300px;
     height: 600px;
     position: absolute;
+    pointer-events: none;
+}
+
+#phone_off_text {
+    text-align: center;
+    height: auto;
+    font-family: 'DIN Bold', Arial, sans-serif;
+    color: #3A99D8;
 }
 
 #flash {
     background: black;
     opacity: 0;
+    pointer-events: none;
 }
 
 .nav_item {

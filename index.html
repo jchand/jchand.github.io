@@ -2,16 +2,14 @@
     
 TODO:
 - be able to pause video
-- scroll to preview work
-- figure out when everything is loaded
-
-videos get loaded even when hidden
-side padding 40pt
+- timeline thing
+- figure out when everything is loaded / make pages load faster
+- quick loading solution first
 
 MOBILE:
 - make nav bar work on mobile
-- scrolling on mobile sucks
 - better mobile support for videos
+- videos get loaded even when hidden
 
 Won't Fix:
 - fix ugly line and aspect ratio for Attachments video
@@ -76,8 +74,8 @@ Won't Fix:
                     <h2>SUMMARY</h2>
                     <p>I designed and engineered the Pull-to-Refresh animation for Chat and Stories. This was an exercise in interaction design and OpenGL development.</p>
                     <ul>
-                            <li><p>The ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 2.2)">hides behind the card and peeks out</a> as I pull down (a reference to Picaboo, the original app name). It winks when I pull past the refresh threshold.</p></li>
-                            <li><p>When I release, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 5.9)">launches and pukes a rainbow.</a></p></li>
+                            <li><p>The ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 1.5)">hides behind the card and peeks out</a> as I pull down (a reference to Picaboo, the original app name). It winks when I pull past the refresh threshold.</p></li>
+                            <li><p>When I release, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 5.3)">launches and pukes a rainbow.</a></p></li>
                             <li><p>Easter egg: if you pull far enough, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 13.2)">becomes frightened and shakes</a>. The device also shakes if haptic feedback is supported.</p></li>
                     </ul>
                     <p></br></p>
@@ -88,7 +86,7 @@ Won't Fix:
                     <h2>SUMMARY</h2>
                     <p>The <a href="https://techcrunch.com/2017/07/05/snapchat-links-backdrops-voice-filters/" target="_blank">Paperclip</a> is a creative tool that lets users attach web pages to Snaps. It served as the foundation for the <a href="https://techcrunch.com/2017/10/10/snapchats-new-context-cards-use-snaps-for-spontaneous-discovery/" target="_blank">Context</a> project - turning a Snap from just a photo or video into an interactive container that describes the world.</p>
                     <ul>
-                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.3)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 3.5)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
+                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.3)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 4.9)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
                             <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 13.5)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
                     </ul>
 
@@ -97,7 +95,6 @@ Won't Fix:
                     <p>The Paperlip tool created an ecosystem where users were sharing millions of pages a day. It also opened the door for third party developers to create experiences on our platform, such as <a href="https://techcrunch.com/2017/09/20/polly-polls/" target="_blank">Polly</a> and <a href="https://www.thesun.co.uk/tech/4112509/sarahah-anonymous-messaging-app-snapchat-honesty-app/" target="_blank">Sarahah</a>. Part of my post-launch efforts was understanding how to better support these services.</p>
                     <p>The tool was also crucial for our monetization efforts. It enabled advertisers to make conversions within their Snap ads by attaching e-commerce web pages. It was also used to rollout the <a href="https://techcrunch.com/2018/02/01/snapchat-snap-store/" target="_blank">Snap Store</a>.</p>
 
-                    <p></br></p>
                     <p></br></p>
                     <p></br></p>
                 </div>
@@ -117,6 +114,7 @@ Won't Fix:
             <div id="flash" class="device"></div>
             <img id="phone" class="device" src="phone.svg">
             <img id="phone_off" class="device" src="phone_off.svg">
+            <p id="phone_off_text" class="device">Scroll down to preview each</br>feature on-device.</p>
         </div>
         <script src="./script.js"></script>
     </body>

@@ -15,8 +15,7 @@
     <g id="📱CHANGE-HERE" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="phone">
             <g id="Group-3">
-                <rect id="Combined-Shape" fill="#585F68" x="0" y="0" width="828" height="1682"></rect>
-                <rect id="Rectangle-6" fill="#585F68" x="810" y="0" width="31" height="1682"></rect>
+                <path d="M828,0 L841,0 L841,1682 L828,1682 L0,1682 L0,0 L828,0 Z M93,21 C62.072054,21 37,46.072054 37,77 L37,1604 C37,1634.92795 62.072054,1660 93,1660 L747,1660 C777.927946,1660 803,1634.92795 803,1604 L803,77 C803,46.072054 777.927946,21 747,21 L93,21 Z" id="Combined-Shape" fill="#585F68"></path>
                 <g id="Group-2" transform="translate(0.500000, 0.000000)">
                     <g id="body">
                         <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>

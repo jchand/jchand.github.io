@@ -1,10 +1,3 @@
-<!-- 
-    
-TODO:
-- pause video + timeline thing
-
--->
-
 <html>
     <head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113912647-1"></script>
@@ -50,10 +43,10 @@ TODO:
                     <p></br></p>
                     <h2>USER FLOW</h2>
                     <ul>
-                            <li><p>I can <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 0)">press and hold the record button</a> to begin recording a Snap. Once the video duration reaches ten seconds, I begin to <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 1.6)">seamlessly record a consecutive Snap</a>. A thumbnail slides on the screen to indicate that a new Snap was created.</p></li>
-                            <li><p>Once I finish recording, I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 7.0)">enter the Preview Screen</a> where I can review my video and edit my Snaps.</p></li>
-                            <li><p>If I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 18.1)">tap a thumbnail</a>, the video seeks to that moment. I can also <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 21.8)">press-and-hold</a> a thumbnail to drag it into the trash.</p></li>
-                            <li><p>I can hide the Multi Snap UI by swiping it away. If it ever gets in the way while I'm drawing or editing, it <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 13.9)">auto-hides</a>.</p></li>
+                            <li><p>I can press and hold the record button to begin recording a Snap. Once the video duration reaches ten seconds, I begin to <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 0)">seamlessly record a consecutive Snap</a>. A thumbnail slides on the screen to indicate that a new Snap was created.</p></li>
+                            <li><p>Once I finish recording, I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 5.8)">enter the Preview Screen</a> where I can review my video and edit my Snaps.</p></li>
+                            <li><p>If I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 16.5)">tap a thumbnail</a>, the video seeks to that moment. I can also <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 20.0)">press-and-hold</a> a thumbnail to drag it into the trash.</p></li>
+                            <li><p>I can hide the Multi Snap UI by swiping it away. If it ever gets in the way while I'm drawing or editing, it <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 12.6)">auto-hides</a>.</p></li>
                     </ul>  
                     <p></br></p>
                     <h2>PROTOTYPING</h2>
@@ -71,8 +64,8 @@ TODO:
                     <p class="mobile_prev"><a href="video_ptr_min.mp4" target="_blank">Watch a video demo.</a></p>
                     <p>I designed and engineered the Pull-to-Refresh animation for Chat and Stories. This was an exercise in interaction design and OpenGL development.</p>
                     <ul>
-                            <li><p>The ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 1.5)">hides behind the card and peeks out</a> as I pull down (a reference to Picaboo, the original app name). It winks when I pull past the refresh threshold.</p></li>
-                            <li><p>When I release, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 5.3)">launches and pukes a rainbow.</a></p></li>
+                            <li><p>The ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 1.0)">hides behind the card and peeks out</a> as I pull down (a reference to Picaboo, the original app name). It winks when I pull past the refresh threshold.</p></li>
+                            <li><p>When I release, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 4.0)">launches and pukes a rainbow.</a></p></li>
                             <li><p>Easter egg: if you pull far enough, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 13.2)">becomes frightened and shakes</a>. The device also shakes if haptic feedback is supported.</p></li>
                     </ul>
                     <p></br></p>
@@ -84,8 +77,8 @@ TODO:
                     <p class="mobile_prev"><a href="video_att_min.mp4" target="_blank">Watch a video demo.</a></p>
                     <p>The <a href="https://techcrunch.com/2017/07/05/snapchat-links-backdrops-voice-filters/" target="_blank">Paperclip</a> is a creative tool that lets users attach web pages to Snaps. It served as the foundation for the <a href="https://techcrunch.com/2017/10/10/snapchats-new-context-cards-use-snaps-for-spontaneous-discovery/" target="_blank">Context</a> project - turning a Snap from just a photo or video into an interactive container that describes the world.</p>
                     <ul>
-                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.3)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 4.9)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
-                            <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 13.5)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
+                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.0)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 4.9)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
+                            <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 12.5)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
                     </ul>
 
                     <p></br></p>
@@ -100,19 +93,28 @@ TODO:
             </div>
         </div>
         <div id="right">
-            <video id="video1" width="268" height="580" loop autoplay onloadstart="this.volume=0">
-                <source src="video_mul_min.mp4" type="video/mp4">
-            </video>
-            <video id="video2" width="268" height="580" loop autoplay onloadstart="this.volume=0">
-                <source src="video_ptr_min.mp4" type="video/mp4">
-            </video>
-            <video id="video3" width="268" height="580" loop autoplay onloadstart="this.volume=0">
-                <source src="video_att_min.mp4" type="video/mp4">
-            </video>
-            <div id="flash" class="device"></div>
-            <img id="phone" class="device" src="phone.svg">
-            <img id="phone_off" class="device" src="phone_off.svg">
-            <p id="phone_off_text" class="device">Scroll down to preview each</br>feature on-device.</p>
+            <div id="right_container">
+                <div id="phone_container">
+                    <video id="video1" width="268" height="580" loop autoplay onloadstart="this.volume=0" onclick="togglePause()">
+                        <source src="video_mul_min.mp4" type="video/mp4">
+                    </video>
+                    <video id="video2" width="268" height="580" loop autoplay onloadstart="this.volume=0" onclick="togglePause()">
+                        <source src="video_ptr_min.mp4" type="video/mp4">
+                    </video>
+                    <video id="video3" width="268" height="580" loop autoplay onloadstart="this.volume=0" onclick="togglePause()">
+                        <source src="video_att_min.mp4" type="video/mp4">
+                    </video>
+                    <div id="pause_overlay" class="device"></div>
+                    <p id="pause_text" class="device"><b>Paused</b></br>Tap to resume</p>
+                    <div id="flash" class="device"></div>
+                    <img id="phone" class="device" src="phone.svg">
+                    <img id="phone_off" class="device" src="phone_off.svg">
+                    <p id="phone_off_text" class="device"><b>Scroll down to preview each</br>feature on-device.</b></br><gray>Tap to pause video.</gray></p>
+                </div>
+                <div id="timeline">
+                    <div id="pointer"></div>
+                </div>
+            </div>
         </div>
         <script src="./script.js"></script>
     </body>

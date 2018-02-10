@@ -22,6 +22,9 @@ var v1 = document.getElementById('video1');
 var v2 = document.getElementById('video2');
 var v3 = document.getElementById('video3');
 
+var timeline = document.getElementById('timeline');
+var pointer = document.getElementById('pointer');
+
 // Global Variables
 var currentTab = 0;
 var currentVideo = 0;
@@ -92,6 +95,7 @@ function setTabColor() {
                     elem_phone.style.display = 'block';
                     elem_phone_off.style.display = 'none';
                     elem_phone_text.style.display = 'none';
+                    timeline.style.display = 'block';
     
                     $("#flash").css("opacity", "1");
                     $("#flash").css("background", "black");
@@ -117,6 +121,7 @@ function setTabColor() {
                     elem_phone.style.display = 'block';
                     elem_phone_off.style.display = 'none';
                     elem_phone_text.style.display = 'none';
+                    timeline.style.display = 'block';
     
                     $("#flash").css("opacity", "1");
                     $("#flash").css("background", "black");
@@ -142,6 +147,7 @@ function setTabColor() {
                     elem_phone.style.display = 'block';
                     elem_phone_off.style.display = 'none';
                     elem_phone_text.style.display = 'none';
+                    timeline.style.display = 'block';
     
                     $("#flash").css("opacity", "1");
                     $("#flash").css("background", "black");
@@ -166,6 +172,7 @@ function setTabColor() {
                     elem_phone.style.display = 'none';
                     elem_phone_off.style.display = 'block';
                     elem_phone_text.style.display = 'block';
+                    timeline.style.display = 'none';
     
                     $("#flash").css("opacity", "1");
                     $("#flash").css("background", "black");
@@ -200,6 +207,95 @@ window.smoothScroll = function(target) {
     scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 }
 
+v1.addEventListener("timeupdate", function() {
+    if (currentVideo == 1) {
+        var value = (100 / v1.duration) * v1.currentTime;
+
+        if (value < 10) {
+            pointer.style.marginLeft = (value * 2.8);
+        } else {
+            $("#pointer").stop(true, false);
+            $("#pointer").animate({
+                marginLeft: (value * 2.8)
+            }, "fast");
+        }
+    }
+});
+v2.addEventListener("timeupdate", function() {
+    if (currentVideo == 2) {
+        var value = (100 / v2.duration) * v2.currentTime;
+
+        if (value < 10) {
+            pointer.style.marginLeft = (value * 2.8);
+        } else {
+            $("#pointer").stop(true, false);
+            $("#pointer").animate({
+                marginLeft: (value * 2.8)
+            }, "fast");
+        }
+    }
+});
+v3.addEventListener("timeupdate", function() {
+    if (currentVideo == 3) {
+        var value = (100 / v3.duration) * v3.currentTime;
+
+        if (value < 10) {
+            pointer.style.marginLeft = (value * 2.8);
+        } else {
+            $("#pointer").stop(true, false);
+            $("#pointer").animate({
+                marginLeft: (value * 2.8)
+            }, "fast");
+        }
+    }
+});
+
+var paused = false;
+
+function applyPause() {
+    if (paused) {
+        v1.pause();
+        v2.pause();
+        v3.pause();
+        $("#timeline").animate({
+            opacity: 0
+        }, "fast");
+        $("#pause_overlay").animate({
+            opacity: 0.5
+        }, "fast");
+        $("#pause_text").animate({
+            opacity: 1.0
+        }, "fast");
+    } else {
+        v1.play();
+        v2.play();
+        v3.play();
+        $("#timeline").animate({
+            opacity: 1
+        }, "fast");
+        $("#pause_overlay").animate({
+            opacity: 0
+        }, "fast");
+        $("#pause_text").animate({
+            opacity: 0
+        }, "fast");
+    }
+}
+
+function togglePause() {
+    if (currentVideo != 0) {
+        paused = !paused;
+        applyPause();
+    }
+}
+
+function unpauseIfNecessary() {
+    if (paused) {
+        paused = false;
+        applyPause();
+    }
+}
+
 function seekToTime(video, ts) {
     video3.hide();
     video2.hide();
@@ -213,13 +309,12 @@ function seekToTime(video, ts) {
         currentVideo = 3;
     }
 
-    console.log(currentVideo);
-
     elem_phone_off.style.display = 'none';
     elem_phone_text.style.display = 'none';
     elem_phone.style.display = 'block';
     video.style.display = 'block';
 
+    unpauseIfNecessary();
     video.currentTime = ts; 
 
     $("#flash").css("background", "white");
@@ -227,6 +322,4 @@ function seekToTime(video, ts) {
     setTimeout(function() { 
         $("#flash").fadeTo( "fast" , 0, function() {});
     }, 750);
-
-
 }

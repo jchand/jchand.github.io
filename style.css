@@ -84,8 +84,25 @@
     position: relative;
 }
 
-video {
-    position: absolute;
+#right_container {
+    width: 300px;
+    height: 625px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#phone_container {
+    width: 300px;
+    height: 600px;
+    background: black;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .device {
@@ -95,10 +112,39 @@ video {
     pointer-events: none;
 }
 
+video {
+    position: absolute;
+}
+
+#pause_overlay {
+    background:black;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#pause_text {
+    text-align: center;
+    height: auto;
+    color: white;
+    opacity: 0;
+}
+
+#timeline {
+    width: 290px;
+    height: 5px;
+    background: #FFFFFF33;
+    display: none;
+} 
+
+#pointer {
+    width: 10px;
+    height: 5px;
+    background: #FFFFFF33;
+}
+
 #phone_off_text {
     text-align: center;
     height: auto;
-    font-family: 'DIN Bold', Arial, sans-serif;
     color: #3A99D8;
 }
 
@@ -149,6 +195,10 @@ video {
 
 /* Fonts */ 
 
+gray {
+    color:black;
+    opacity: 0.4;
+}
 h1 {
     font-size: 26pt;
     font-family: 'DIN Bold', Arial, sans-serif;
@@ -162,6 +212,10 @@ h2 {
     letter-spacing: 1px;
     color: #373C43;
     line-height: 22pt;
+}
+
+b {
+    font-family: 'DIN Bold', Arial, sans-serif;
 }
 
 p {

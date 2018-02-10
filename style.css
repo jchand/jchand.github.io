@@ -193,6 +193,11 @@ video {
     color: #3A99D8AA;
 }
 
+#intro_mobile {
+    display: none;
+    font-family: 'DIN Bold', Arial, sans-serif;
+    color: #3A99D8;
+}
 /* Fonts */ 
 
 gray {

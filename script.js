@@ -39,6 +39,8 @@ function toggle() {
         document.getElementById('right').style.display = 'none';
         document.getElementById('nav').style.display = 'none';
         document.getElementById('left').style.width = '100%';
+        document.getElementById('intro_desktop').style.display = 'none';
+        document.getElementById('intro_mobile').style.display = 'block';
 
         var all = document.getElementsByClassName('scrub');
         for (var i = 0; i < all.length; i++) {
@@ -56,6 +58,8 @@ function toggle() {
         document.getElementById('right').style.display = 'flex';
         document.getElementById('nav').style.display = 'flex';
         document.getElementById('left').style.width = '60%';
+        document.getElementById('intro_desktop').style.display = 'block';
+        document.getElementById('intro_mobile').style.display = 'none';
 
         var all = document.getElementsByClassName('scrub');
         for (var i = 0; i < all.length; i++) {

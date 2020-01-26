@@ -1,122 +1,27 @@
 <html>
     <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113912647-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-113912647-1');
-        </script>
-        <title>Jesse Chand | Portfolio</title>
-        <link rel="stylesheet" href="style.css">
+        <title>Jesse Chand</title>
         <meta name="robots" content="noindex">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=PT+Serif"/>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond&display=swap" > 
     </head>
     <body>
-        <div id="left">
-            <div id="nav">
-                <div id="navbar">
-                    <h2 class="nav_item" id="tab1" onclick="smoothScroll(document.getElementById('section1'))">ABOUT</h2>
-                    <h2 class="nav_item" id="tab2" onclick="smoothScroll(document.getElementById('section2'))">MULTI SNAP</h2>
-                    <h2 class="nav_item" id="tab3" onclick="smoothScroll(document.getElementById('section3'))">PULL-TO-REFRESH</h2>
-                    <h2 class="nav_item" id="tab4" onclick="smoothScroll(document.getElementById('section4'))">PAPERCLIP</h2>
-                </div>
+        <div class="page">
+            <div class="margin_side"></div>
+            <div class="content">
+                <h1>Jesse Chand</h1>
+                <p>I make expressive software. Formerly on the design team at <a href="https://www.snapchat.com/" target="_blank">Snapchat</a> under CEO Evan Spiegel, where I worked to transform a simple camera into a rich creative editor. Prior to that I was a software engineer at <a href="https://www.wired.com/2014/03/facebook-paper/" target="_blank">Facebook Paper</a>, working with a team to pioneer the state of the art for mobile animations and interactions. Most recently, a Y Combinator founder.</p>
+                <p>My expertise is in mobile product design, Swift & Objective-C, animations, interactions, and prototyping. Feel free to<br />reach out or take a look at my work. ✌️</p>
+                <hr />
+                <ul class="links">
+                    <li><a href="https://twitter.com/jessechand" class="footer">Twitter</li>
+                    <li><a href="https://www.linkedin.com/in/jessechand/" class="footer">LinkedIn</a></li>
+                </ul>
             </div>
-            <div id="page">
-                <div id="margin_side"></div>
-                <div id="text">
-                    <h1 id="section1">About</h1>
-                    <p id="intro_mobile">This portfolio is a text-only mobile version.</br>View the full interactive experience on a larger device.</p>
-                    <p>I’m Jesse Chand, a product designer and engineer. Previously I was at <a href="https://www.snapchat.com/" target="_blank">Snapchat</a>, as a core designer reporting to CEO Evan Spiegel. Before that I helped push the boundaries of animations and interactions on iOS, with the <a href="https://code.facebook.com/posts/656530327776932/building-paper/" target="_blank">Facebook Paper</a> team.</p>
-                    <p>I’m passionate about making software more expressive. My background is in game design, and I hope to apply those principles in all of my design work.</p>
-                    <p id="intro_desktop">This interactive portfolio highlights three projects I worked on at Snapchat. Each was designed, prototyped and managed by myself from end-to-end.</p>
-                    <p>Feel free to <a href="mailto:jessechand@gmail.com" target="_top">send me an email</a> or <a href="jesse_chand_resume.pdf" target="_blank">download my resume.</a></p>
-                    
-
-                    <p></br></p>
-                    <h1 id="section2">Multi Snap</h1>
-                    <h2>SUMMARY</h2>
-                    <p class="mobile_prev"><a href="video_mul_min.mp4" target="_blank">Watch a video demo.</a></p>
-                    <p><a href="https://techcrunch.com/2017/07/18/snapchat-adds-multi-snap-recording-and-a-color-changing-tint-brush/" target="_blank">Multi Snap</a> is a feature that allows users to record, edit and send up to six Snaps simultaneously. Previously the app would limit video recording to one 10 second Snap. With Multi Snap, you can keep recording up to a minute to capture the whole moment.</p>
-                    <p>This was one of the most impactful projects that the company released in the year. It resulted in a 14% increase in Story posts across the platform, and more than half of all videos on Snapchat are now Multi Snaps.</p>
-                    <p></br></p>
-                    <h2>USER FLOW</h2>
-                    <ul>
-                            <li><p>I can press and hold the record button to begin recording a Snap. Once the video duration reaches ten seconds, I begin to <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 0)">seamlessly record a consecutive Snap</a>. A thumbnail slides on the screen to indicate that a new Snap was created.</p></li>
-                            <li><p>Once I finish recording, I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 5.8)">enter the Preview Screen</a> where I can review my video and edit my Snaps.</p></li>
-                            <li><p>If I <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 16.5)">tap a thumbnail</a>, the video seeks to that moment. I can also <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 20.0)">press-and-hold</a> a thumbnail to drag it into the trash.</p></li>
-                            <li><p>I can hide the Multi Snap UI by swiping it away. If it ever gets in the way while I'm drawing or editing, it <a class="scrub" onclick="seekToTime(document.getElementById('video1'), 12.6)">auto-hides</a>.</p></li>
-                    </ul>  
-                    <p></br></p>
-                    <h2>PROTOTYPING</h2>
-                    <p>Evan asked me to prototype several approaches to expand the ten second recording limit. The first attempt was a simple extension of a Snap from ten seconds to sixty. However, we pivoted to the Multi Snap approach: Snaps remain ten seconds long, and longer videos are split into multiple Snaps. We chose this for three reasons:
-                    <ul>
-                            <li><p>It respects the notion that a Snap is a quick bite of content.</p></li>
-                            <li><p>Using the existing tap-to-skip behavior, users can scrub through a long video in 10s intervals instead of skipping the whole thing.</p></li>
-                            <li><p>A UI for editing multiple Snaps together is flexible: it could plausibly support sources other than the Snap camera, giving the product the capacity to be a generalized Story editor.</p></li>
-                    </ul>
-    
-
-                    <p></br></p>
-                    <h1 id="section3">Pull-to-Refresh</h1>
-                    <h2>SUMMARY</h2>
-                    <p class="mobile_prev"><a href="video_ptr_min.mp4" target="_blank">Watch a video demo.</a></p>
-                    <p>I designed and engineered the Pull-to-Refresh animation for Chat and Stories. This was an exercise in interaction design and OpenGL development.</p>
-                    <ul>
-                            <li><p>The ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 1.0)">hides behind the card and peeks out</a> as I pull down (a reference to Picaboo, the original app name). It winks when I pull past the refresh threshold.</p></li>
-                            <li><p>When I release, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 4.0)">launches and pukes a rainbow.</a></p></li>
-                            <li><p>Easter egg: if you pull far enough, the ghost <a class="scrub" onclick="seekToTime(document.getElementById('video2'), 13.2)">becomes frightened and shakes</a>. The device also shakes if haptic feedback is supported.</p></li>
-                    </ul>
-                    <p></br></p>
-                    <h2>ENGINEERING</h2>
-                    <p>I prototyped and developed the animation in OpenGL. Two shaders are used: one to render the wave tracking your finger, and another to render the rainbow ripple effect. The wave is a replication of the After Effects warp effect. I also use spring dynamics from the POP animation library to adjust the wave peak based on the scroll offset. The rainbow ripple effect is achieved by horizontally translating a gradient layer against another with a blend mode.</p>
-                    <p></br></p>
-                    <h1 id="section4">Paperclip</h1>
-                    <h2>SUMMARY</h2>
-                    <p class="mobile_prev"><a href="video_att_min.mp4" target="_blank">Watch a video demo.</a></p>
-                    <p>The <a href="https://techcrunch.com/2017/07/05/snapchat-links-backdrops-voice-filters/" target="_blank">Paperclip</a> is a creative tool that lets users attach web pages to Snaps. It served as the foundation for the <a href="https://techcrunch.com/2017/10/10/snapchats-new-context-cards-use-snaps-for-spontaneous-discovery/" target="_blank">Context</a> project - turning a Snap from just a photo or video into an interactive container that describes the world.</p>
-                    <ul>
-                            <li><p>Upon <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 0.0)">opening the tool</a> I can browse the web, search for a URL, or paste one from my clipboard. I can then <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 4.9)">preview my page</a>, and when I'm ready I hit the attach button.</p></li>
-                            <li><p>When <a class="scrub" onclick="seekToTime(document.getElementById('video3'), 12.5)">my friend opens the Snap</a>, they can swipe-up to view.</p></li>
-                    </ul>
-
-                    <p></br></p>
-                    <h2>IMPACT</h2>
-                    <p>The Paperlip tool created an ecosystem where users were sharing millions of pages a day. It also opened the door for third party developers to create experiences on our platform, such as <a href="https://techcrunch.com/2017/09/20/polly-polls/" target="_blank">Polly</a> and <a href="https://www.thesun.co.uk/tech/4112509/sarahah-anonymous-messaging-app-snapchat-honesty-app/" target="_blank">Sarahah</a>. Part of my post-launch efforts was understanding how to better support these services.</p>
-                    <p>The tool was also crucial for our monetization efforts. It enabled advertisers to make conversions within their Snap ads by attaching e-commerce web pages. It was also used to rollout the <a href="https://techcrunch.com/2018/02/01/snapchat-snap-store/" target="_blank">Snap Store</a>.</p>
-
-                    <p></br></p>
-                    <p></br></p>
-                </div>
-                <div id="margin_side"></div>
-            </div>
+            <div class="margin_side"></div>
         </div>
-        <div id="right">
-            <div id="right_container">
-                <div id="phone_container">
-                    <video id="video1" width="268" height="580" loop autoplay onloadstart="this.volume=0" onclick="togglePause()">
-                        <source src="video_mul_min.mp4" type="video/mp4">
-                    </video>
-                    <video id="video2" width="268" height="580" loop autoplay onloadstart="this.volume=0" onclick="togglePause()">
-                        <source src="video_ptr_min.mp4" type="video/mp4">
-                    </video>
-                    <video id="video3" width="268" height="580" loop autoplay onloadstart="this.volume=0" onclick="togglePause()">
-                        <source src="video_att_min.mp4" type="video/mp4">
-                    </video>
-                    <div id="pause_overlay" class="device"></div>
-                    <p id="pause_text" class="device"><b>Paused</b></br>Tap to resume</p>
-                    <div id="flash" class="device"></div>
-                    <img id="phone" class="device" src="phone.svg">
-                    <img id="phone_off" class="device" src="phone_off.svg">
-                    <p id="phone_off_text" class="device"><b>Scroll down to preview each</br>feature on-device.</b></br><gray>Tap to pause / play.</gray></p>
-                </div>
-                <div id="timeline">
-                    <div id="pointer"></div>
-                </div>
-            </div>
-        </div>
-        <script src="./script.js"></script>
     </body>
-</html>
+ </html>

@@ -52,7 +52,7 @@ ul.links>li {
     margin-right: 32px; 
 
     font-size: 16px;
-    font-family: 'PT Serif', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-style: normal;
     font-weight: normal;
     color: #2E3542;
@@ -64,16 +64,16 @@ ul.links>li {
 
 h1 {
     font-size: 30px;
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     color: #2E3542;
     line-height: 36px;
 }
 
 p {
     font-size: 16px;
-    font-family: 'PT Serif', Georgia, serif;
+    font-family: 'Spectral', Georgia, serif;
     font-style: normal;
     font-weight: normal;
     color: #2E3542;
@@ -81,21 +81,21 @@ p {
 }
 
 ::selection {
-    background: #ED0000;
-    color: #FFFAEA; 
+    background: #FF377D;
+    color: #FFFAEA;
 }
   
 ::-moz-selection {
-    background: #ED0000;
-    color: #FFFAEA; 
+    background: #FF377D;
+    color: #FFFAEA;
 }
 
 a {
-    color: #ed0000;
+    color: #FF377D;
 }
 
 a:hover {
-    color: #F46666;
+    color: #FE86B0;
 }
 
 a.footer {
